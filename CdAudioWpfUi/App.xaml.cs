@@ -17,6 +17,8 @@ using Wpf.Ui.Controls;
 using Wpf.Ui;
 
 using Application = System.Windows.Application;
+using Appearance = Wpf.Ui.Appearance;
+using Wpf.Ui.Appearance;
 
 namespace CdAudioWpfUi
 {
@@ -42,6 +44,8 @@ namespace CdAudioWpfUi
                 clipboardService: new ClipboardService()
                 );
             MainWindow = (Window)_viewBuilder.CreateView(mainViewModel);
+            ApplicationThemeManager.GetAppTheme();
+            Appearance.SystemThemeWatcher.Watch(MainWindow);
 
             if (MainWindow is Window window && window.FindName("msg_snackbar") is SnackbarPresenter snackbarPresenter)
             {
@@ -50,7 +54,7 @@ namespace CdAudioWpfUi
             }
             else
             {
-                throw new InvalidOperationException("Die erstellte View ist kein Fenster.");
+                throw new InvalidOperationException("Could not find SnackbarPresenter in MainWindow.");
             }
         }
 

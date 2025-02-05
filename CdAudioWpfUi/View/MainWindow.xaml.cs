@@ -12,9 +12,6 @@ namespace CdAudioWpfUi.View
         public MainWindow(INotifyPropertyChanged mainViewModel)
         {
             DataContext = mainViewModel;
-
-            Appearance.SystemThemeWatcher.Watch(this);
-
             InitializeComponent();
 
         }
