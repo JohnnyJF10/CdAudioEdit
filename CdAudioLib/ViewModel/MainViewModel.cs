@@ -26,24 +26,23 @@ namespace CdAudioLib.ViewModel
         private string _cdAudioFilePath = "";
         private bool _isTextBoxFocused;
         private int _selectedIndex;
+        private ObservableTrAudio _selectedTrAudio = new();
 
-        private readonly UndoRedoManager _undoRedoManager = new();
+        private readonly Func<INotifyPropertyChanged, IView> _getViewCallback;
         private readonly Action<TrAudioMessage, object?> _showMessageCallback;
-        //private readonly MessageManager _messageManager;
+        private readonly Func<YesNoCancel> _saveChangesCallback;
 
         private readonly IFileService _cdAudioFileService;
         private readonly IClipboardService _clipboardService;
 
-        private ObservableTrAudio _selectedTrAudio = new();
-        private Func<INotifyPropertyChanged, IView> _getViewCallback;
-        private readonly SettingsViewModel _settingsViewModel;
-        private readonly Func<YesNoCancel> _saveChangesCallback;
-
+        private readonly UndoRedoManager _undoRedoManager = new();
         private readonly CdAudioFileManager _cdAudioFileManager = new();
         private readonly AudioPlayer _audioPlayer = new();
-        private readonly TrAudioConverter _converter;
         private readonly FileAdmissionManager _fileAdmissionManager = new();
         private readonly TrAudioHelper _trAudioHelper = new();
+
+        private readonly TrAudioConverter _converter;
+        private readonly SettingsViewModel _settingsViewModel;
 
         #endregion
 

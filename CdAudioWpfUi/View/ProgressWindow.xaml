@@ -21,10 +21,14 @@
                   WindowCornerPreference="Round"
                   WindowStartupLocation="CenterScreen"
                   d:Background="Black"
-                  Title="Progress" 
-                  Height="150" 
+                  Title="Progress"
+                  Height="100"
+                  MinHeight="100"
                   Width="300"
+                  MinWidth="300"
                   ResizeMode="NoResize"
+                  SizeToContent="Height"
+                  SnapsToDevicePixels="True"
                   d:DataContext="{d:DesignInstance Type=viewmodel:ProgressViewModel, IsDesignTimeCreatable=False}">
 
     <Grid>
@@ -40,24 +44,26 @@
             />
         <ProgressBar x:Name="bar_prog"
                      Grid.Row="1"
-                     Margin="5"
+                     Margin="10"
                      Height="10"
                      Minimum="0" 
                      Maximum="{Binding maxProgress, UpdateSourceTrigger=PropertyChanged}"
                      Value="{Binding progress, UpdateSourceTrigger=PropertyChanged}"/>
 
         <StackPanel
-            Margin="5"
+            Margin="10"
             Grid.Row="2"
             Orientation="Horizontal"
+            VerticalAlignment="Center"
             >
-            <ui:TextBlock Text="Progress: Writing Slot "/>
+            <ui:TextBlock Text="Progress: Writing Entry "/>
             <ui:TextBlock Text="{Binding progress, UpdateSourceTrigger=PropertyChanged}"/>
-            <ui:TextBlock Text=" of 130"/>
+            <ui:TextBlock Text=" of "/>
+            <ui:TextBlock Text="{Binding maxProgress, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
         <Button x:Name="btn_cancel"
                     Content="Cancel"
-                    Margin="5"
+                    Margin="10"
                     HorizontalAlignment="Right"
                     Grid.Row="2"
                     Command="{Binding CancelCommand}"/>

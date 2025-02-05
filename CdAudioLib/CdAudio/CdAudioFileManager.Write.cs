@@ -103,20 +103,21 @@ namespace CdAudioLib.CdAudio
                         LogError(ex);
                         continue;
                     }
+
+                    if (AddWavExtension && !trAudio.Name.EndsWith(".wav"))
+                        name = trAudio.Name + ".wav";
+                    else name = trAudio.Name;
+
                     newPos = writer.BaseStream.Position;
 
                     writer.BaseStream.Position = i * CdAudioConstants.CD_AUDIO_ENTRY_LEN;
-                    writer.Write(trAudio.Name.ToCharArray());
+                    writer.Write(name.ToCharArray());
 
                     writer.BaseStream.Position = i * CdAudioConstants.CD_AUDIO_ENTRY_LEN + CdAudioConstants.CD_AUDIO_NAME_LEN;
                     writer.Write((uint)(newPos - oldPos));
                     writer.Write((uint)oldPos);
 
                     writer.BaseStream.Position = newPos;
-
-                    if (AddWavExtension && !trAudio.Name.EndsWith(".wav"))
-                        name = trAudio.Name + ".wav";
-                    else name = trAudio.Name;
 
                     // Write the new Meta Data back into the Collection
                     results.Add(new TrAudio
