@@ -12,15 +12,22 @@ Download the latest release from [GitHub Releases](https://github.com/JohnnyJF10
 - .NET 6+
 
 ## Usage
-1. Open the app and load your `CdAudio.wad` file.
-2. Extract existing `.wav` files or import new audio files (`.wav`, `.mp3`, `.ogg`).
-3. Convert and compress audio file by using drag and drop.
-4. Save your modified `CdAudio.wad`.
+1. Open the app and load a CdAudio.wad file.
+![Step1](images/readmeStep1.png)
+2. Use Drag and Drop or the Import Button to import new audio files (.wav, .mp3, .ogg (Vorbis)). You can reorder, shift, or rename the tracks as needed.
+![Step2](images/readmeStep2.png)
+3. During file save, the injected audio files are converted and compressed to MS ADPCM, and the modified CdAudio.wad file is built.
+![Step3](images/readmeStep3.png)
+
+Additional: 
+- Use the Quick Converter to create MS ADPCM Wave Files 
+- Use the Export tool to extract selected or all files in the CdAudio.wad to wav or MP3. 
+
 
 ### Keyboard Shortcuts
 | Shortcut            | Action              |
 |---------------------|--------------------|
-| **Ctrl + N**       | New project        |
+| **Ctrl + N**       | New file           |
 | **Ctrl + O**       | Open file          |
 | **Ctrl + S**       | Save file          |
 | **Ctrl + Shift + S** | Save As            |
@@ -30,7 +37,7 @@ Download the latest release from [GitHub Releases](https://github.com/JohnnyJF10
 | **Ctrl + D**       | Paste & Swap       |
 | **Ctrl + Z**       | Undo               |
 | **Ctrl + Y**       | Redo               |
-| **Delete**         | Delete selection   |
+| **Delete**         | Delete             |
 | **Ctrl + E**       | Export             |
 | **Ctrl + F**       | Open Settings      |
 
