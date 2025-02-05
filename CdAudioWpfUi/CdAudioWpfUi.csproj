@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>cdaudioedit-icon-256.ico</ApplicationIcon>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<TrimUnusedDependencies>true</TrimUnusedDependencies>
+	<PackageIcon>cdaudioedit-icon-256.png</PackageIcon>
+	<AssemblyName>CdAudioEdit</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="cdaudioedit-icon-256.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\wpfui-icon-256.png" />
+    <None Remove="Assets\wpfui-icon-1024.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CdAudioLib\CdAudioLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\cdaudioedit-icon-256.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
