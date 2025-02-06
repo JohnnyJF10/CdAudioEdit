@@ -96,7 +96,7 @@ namespace CdAudioLib.ViewModel
             if (_fileService == null) throw new InvalidOperationException("File service not set");
             if (_fileService.SelectFolderDialog() == true)
             {
-                ExportPath = _fileService.SelectedPath;
+                ExportPath = _fileService.SelectedPath + "\\";
             }
         }
 

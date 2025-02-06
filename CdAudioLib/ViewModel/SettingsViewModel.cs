@@ -175,7 +175,7 @@ namespace CdAudioLib.ViewModel
         private void SelectExportFolder()
         {
             if (_cdAudioFileManager != null && _cdAudioFileManager.SelectFolderDialog() == true)
-                ExportFolder = _cdAudioFileManager.SelectedPath;
+                ExportFolder = _cdAudioFileManager.SelectedPath + "\\";
         }
 
         private void LogError(Exception ex)

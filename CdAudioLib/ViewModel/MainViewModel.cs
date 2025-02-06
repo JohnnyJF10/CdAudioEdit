@@ -564,10 +564,10 @@ namespace CdAudioLib.ViewModel
             if (exportView.ShowDialog() == true)
             {
                 EnsureExportFolderExists();
-                await ExportList(exportViewModel.ResultList, exportViewModel.SelectedFormat);
+                await ExportList(exportViewModel.ResultList, exportViewModel.SelectedFormat, exportViewModel.ExportPath);
             }
         }
-        public async Task ExportList(IList<int> slots, ExportAudioFormat format)
+        public async Task ExportList(IList<int> slots, ExportAudioFormat format, string selectedDir)
         {
             bool isCancelled = false;
             List<int> failedSlots = new();
@@ -585,7 +585,7 @@ namespace CdAudioLib.ViewModel
                     try
                     {
                         if (isCancelled) throw new OperationCanceledException();
-                        _converter.Export(TrAudios[item], format);
+                        _converter.Export(TrAudios[item], format, selectedDir + "\\" + TrAudios[item].Name);
                         progressViewModel.progress++;
                     }
                     catch (OperationCanceledException)
