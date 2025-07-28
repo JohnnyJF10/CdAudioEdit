@@ -1,4 +1,4 @@
-name: Build and Upload .NET 8 WPF App as Zip
+name: dotnet-build
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
 
       - name: Remove .pdb files from publish output
         run: |
-          $publishDir = "CdAudioWpfUi\bin\Release\net8.0-windows\win-x64\publish"
+          $publishDir = "CdAudioWpfUi\bin\Release\net6.0-windows\publish"
           if (Test-Path $publishDir) {
             Get-ChildItem $publishDir -Recurse -Filter *.pdb | Remove-Item -Force
           } else {
@@ -52,4 +52,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_BASE }}
-          path: CdAudioWpfUi/bin/Release/net8.0-windows/win-x64/publish
+          path: CdAudioWpfUi/bin/Release/net6.0-windows/publish
