@@ -36,7 +36,7 @@ jobs:
           [xml]$csproj = Get-Content ./CdAudioWpfUi/CdAudioWpfUi.csproj
           $title = $csproj.Project.PropertyGroup.AssemblyTitle
           $version = $csproj.Project.PropertyGroup.AssemblyVersion
-          $shortVersion = ($version -split '\.')[0..2] -join '.'`
+          $shortVersion = ($version -split '\.')[0..2] -join '.'
           $artifactName = "${title}V${shortVersion}"
           echo "ZIP_BASE=$artifactName" >> $env:GITHUB_ENV
 
