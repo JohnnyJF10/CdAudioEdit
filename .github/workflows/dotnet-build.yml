@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-    - name: Setup .NET 6
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -36,13 +36,13 @@ jobs:
           [xml]$csproj = Get-Content ./CdAudioWpfUi/CdAudioWpfUi.csproj
           $title = $csproj.Project.PropertyGroup.AssemblyTitle
           $version = $csproj.Project.PropertyGroup.AssemblyVersion
-          $shortVersion = ($version -split '\.')[0..2] -join '.'
+          $shortVersion = ($version -split '\.')[0..2] -join '.'`
           $artifactName = "${title}V${shortVersion}"
           echo "ZIP_BASE=$artifactName" >> $env:GITHUB_ENV
 
       - name: Remove .pdb files from publish output
         run: |
-          $publishDir = "CdAudioWpfUi\bin\Release\net6.0-windows\publish"
+          $publishDir = "CdAudioWpfUi\bin\Release\net6.0-windows\win-x64\publish"
           if (Test-Path $publishDir) {
             Get-ChildItem $publishDir -Recurse -Filter *.pdb | Remove-Item -Force
           } else {
@@ -53,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_BASE }}
-          path: CdAudioWpfUi/bin/Release/net6.0-windows/publish
+          path: CdAudioWpfUi/bin/Release/net6.0-windows/win-x64/publish

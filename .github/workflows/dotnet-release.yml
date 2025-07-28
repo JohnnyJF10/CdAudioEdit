@@ -55,15 +55,17 @@ jobs:
 
       - name: Remove .pdb files
         run: |
-          $publishDir = "CdAudioWpfUi\bin\Release\net6.0-windows\publish"
+          $publishDir = "CdAudioWpfUi\bin\Release\net6.0-windows\win-x64\publish"
           if (Test-Path $publishDir) {
             Get-ChildItem $publishDir -Recurse -Filter *.pdb | Remove-Item -Force
+          } else {
+            Write-Error "Publish directory '$publishDir' not found."
           }
 
       - name: Zip publish folder
         run: |
           $zipName = "${{ steps.meta.outputs.artifact_name }}.zip"
-          Compress-Archive -Path CdAudioWpfUi/bin/Release/net6.0-windows/publish* -DestinationPath $zipName
+          Compress-Archive -Path CdAudioWpfUi/bin/Release/net6.0-windows/win-x64/publish/* -DestinationPath $zipName
 
       - name: Upload ZIP as artifact
         uses: actions/upload-artifact@v4
