@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using CdAudioLib.ViewModel;
@@ -17,7 +10,7 @@ namespace CdAudioWpfUi.Services
 {
     class ViewBuilder
     {
-        private readonly Dictionary<Type, Func<INotifyPropertyChanged, IView>> _viewCreators = 
+        private readonly Dictionary<Type, Func<INotifyPropertyChanged, IView>> _viewCreators =
                      new Dictionary<Type, Func<INotifyPropertyChanged, IView>>
     {
         { typeof(MainViewModel),     viewModel => new MainWindow((MainViewModel)viewModel) },

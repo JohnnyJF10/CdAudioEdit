@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using System.ComponentModel;
 using System.Runtime.Serialization;
@@ -66,7 +59,7 @@ namespace CdAudioLib.Model
             }
         }
 
-        public string FileType  
+        public string FileType
             => Path.GetExtension(FilePath).ToLower() switch
             {
                 ".wad" => "MS ADPCM",
@@ -76,7 +69,7 @@ namespace CdAudioLib.Model
                 _ => "other"
             };
 
-        public string FileStatus 
+        public string FileStatus
             => Path.GetExtension(FilePath) switch
             {
                 ".wad" => "Included",
@@ -130,7 +123,7 @@ namespace CdAudioLib.Model
             }
         }
 
-        public string? ChannelsString 
+        public string? ChannelsString
             => channels switch { 1 => "Mono", _ => "Stereo" };
 
         private int _sampleRate;
@@ -148,14 +141,14 @@ namespace CdAudioLib.Model
             }
         }
 
-        public string SampleRateString 
+        public string SampleRateString
             => $"{sampleRate / 1000}.{sampleRate % 1000:D3} Hz";
 
         private bool _isOriginalTrAudio;
 
-        public bool IsOriginalTrAudio 
-        { 
-            get => _isOriginalTrAudio; 
+        public bool IsOriginalTrAudio
+        {
+            get => _isOriginalTrAudio;
             set
             {
                 if (_isOriginalTrAudio != value)
@@ -197,12 +190,12 @@ namespace CdAudioLib.Model
 
         public object Clone()
         {
-            return new ObservableTrAudio() 
-            { 
-                FilePath = this.FilePath, 
-                duration =   this.duration, 
+            return new ObservableTrAudio()
+            {
+                FilePath = this.FilePath,
+                duration = this.duration,
                 fileSize = this.fileSize,
-                Name =     this.Name,
+                Name = this.Name,
                 offset = this.offset,
                 sampleRate = this.sampleRate,
                 channels = this.channels,
@@ -213,12 +206,12 @@ namespace CdAudioLib.Model
         public bool Equals(ITrAudio? other)
         {
             if (other == null) return false;
-            return 
+            return
                 (
                     other.FilePath == this.FilePath &&
-                    other.duration   == this.duration   &&
+                    other.duration == this.duration &&
                     other.fileSize == this.fileSize &&
-                    other.Name     == this.Name     &&
+                    other.Name == this.Name &&
                     other.offset == this.offset &&
                     other.sampleRate == this.sampleRate &&
                     other.channels == this.channels &&
@@ -229,10 +222,10 @@ namespace CdAudioLib.Model
         public void UpdateFromOther(ITrAudio? other)
         {
             if (other == null) return;
-            this.Name =     other.Name;
-            this.duration =   other.duration;
+            this.Name = other.Name;
+            this.duration = other.duration;
             this.FilePath = other.FilePath;
-            this.offset =   other.offset;
+            this.offset = other.offset;
             this.fileSize = other.fileSize;
             this.sampleRate = other.sampleRate;
             this.channels = other.channels;
@@ -248,7 +241,7 @@ namespace CdAudioLib.Model
             info.AddValue(nameof(fileSize), this.fileSize);
             info.AddValue(nameof(sampleRate), this.sampleRate);
             info.AddValue(nameof(channels), this.channels);
-            info.AddValue(nameof(IsOriginalTrAudio),this.IsOriginalTrAudio);
+            info.AddValue(nameof(IsOriginalTrAudio), this.IsOriginalTrAudio);
         }
         public ObservableTrAudio()
         {

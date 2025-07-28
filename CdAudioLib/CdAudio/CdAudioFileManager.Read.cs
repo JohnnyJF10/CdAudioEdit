@@ -1,15 +1,8 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Model;
-using System.Text;
 using CdAudioLib.Utils;
+using System.Text;
 
 namespace CdAudioLib.CdAudio
 {

@@ -1,11 +1,6 @@
 ﻿using CdAudioLib.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Wpf.Ui.Controls;
 using Wpf.Ui;
+using Wpf.Ui.Controls;
 
 namespace CdAudioWpfUi.Services
 {
@@ -44,7 +39,7 @@ namespace CdAudioWpfUi.Services
                         message: "File loaded successfully.",
                         appearance: ControlAppearance.Success,
                         icon: new SymbolIcon(SymbolRegular.ApprovalsApp24),
-                        timeout: TimeSpan.FromSeconds(10));
+                        timeout: TimeSpan.FromSeconds(3));
                     break;
                 case TrAudioMessage.FileSaveOperationCancelledMessage:
                     snackbarService.Show(
@@ -86,7 +81,7 @@ namespace CdAudioWpfUi.Services
                         message: "The file was saved successfully.",
                         appearance: ControlAppearance.Success,
                         icon: new SymbolIcon(SymbolRegular.ApprovalsApp24),
-                        timeout: TimeSpan.FromSeconds(10));
+                        timeout: TimeSpan.FromSeconds(3));
                     break;
                 case TrAudioMessage.ExportNotSupportedMessage:
                     snackbarService.Show(
@@ -202,7 +197,7 @@ namespace CdAudioWpfUi.Services
                         message: "The file list was converted successfully.",
                         appearance: ControlAppearance.Success,
                         icon: new SymbolIcon(SymbolRegular.ApprovalsApp24),
-                        timeout: TimeSpan.FromSeconds(10));
+                        timeout: TimeSpan.FromSeconds(3));
                     break;
                 default:
                     break;

@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Model;
 using System.Diagnostics;
@@ -65,16 +58,8 @@ namespace CdAudioLib.Utils
                     FileName = trAudio.FilePath,
                     UseShellExecute = true
                 });
-            }            
-            // Schedule the file for deletion after a few seconds
-            ScheduleFileDeletion(TimeSpan.FromSeconds(10));
+            }
         }
-
-        private void ScheduleFileDeletion(TimeSpan delay)
-        {
-            Task.Delay(delay).ContinueWith( _ => DeleteExistingTempFiles());
-        }
-
         private void DeleteExistingTempFiles()
         {
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;

@@ -1,20 +1,11 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using CdAudioLib.Extensions;
 using CdAudioLib.Model;
 using CdAudioLib.WaveStreams;
-
-using NAudio.Wave;
 using NAudio.Lame;
-
+using NAudio.Wave;
 using System.Globalization;
 
 
@@ -40,7 +31,7 @@ namespace CdAudioLib.Utils
 
         //Properties
         private string _exportDir;
-        public string ExportDir 
+        public string ExportDir
         {
             get => _exportDir;
             set
@@ -120,8 +111,8 @@ namespace CdAudioLib.Utils
                     ".ogg" => ExportAudioFormat.OGG,
                     _ => throw new NotSupportedException("Unsupported file format")
                 };
-            }           
-            
+            }
+
             switch (exportAudioFormat)
             {
                 case ExportAudioFormat.WAV:
@@ -215,7 +206,7 @@ namespace CdAudioLib.Utils
             }
         }
 
-        private void ConvertAndWrite(WaveStream waveStream, BinaryWriter writer,out int factValue)
+        private void ConvertAndWrite(WaveStream waveStream, BinaryWriter writer, out int factValue)
         {
             var inputFormat = waveStream.WaveFormat;
             IWaveProvider waveProvider = waveStream;
@@ -229,7 +220,7 @@ namespace CdAudioLib.Utils
                 waveProvider = new MediaFoundationResampler(waveStream,
                     new WaveFormat(
                         rate: (int)CdAudioConstants.TR_AUDIO_SAMPLE_RATE,
-                        bits: 16, 
+                        bits: 16,
                         channels: inputFormat.Channels))
                 {
                     ResamplerQuality = this.resamplingQuality

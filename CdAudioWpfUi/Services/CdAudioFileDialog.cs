@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using System.Text;
@@ -87,7 +80,7 @@ namespace CdAudioWpfUi.Services
                 case FileTypes.Wav: return ".wav";
                 case FileTypes.Mp3: return ".mp3";
                 case FileTypes.Ogg: return ".ogg";
-                default:  return "";
+                default: return "";
             }
         }
 

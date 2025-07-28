@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CdAudioLib.Extensions
+﻿namespace CdAudioLib.Extensions
 {
     public static class CustomCommandManager
     {
@@ -16,14 +10,14 @@ namespace CdAudioLib.Extensions
         {
             if (handler == null) throw new ArgumentNullException(nameof(handler));
             Handlers.Add(handler);
-            RequerySuggested += handler; 
+            RequerySuggested += handler;
         }
 
         public static void RemoveCanExecuteChangedHandler(EventHandler handler)
         {
             if (handler == null) throw new ArgumentNullException(nameof(handler));
             Handlers.Remove(handler);
-            RequerySuggested -= handler; 
+            RequerySuggested -= handler;
         }
 
         public static void InvalidateRequerySuggested()

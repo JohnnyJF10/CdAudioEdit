@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using CdAudioLib.Model;
@@ -59,7 +52,8 @@ namespace CdAudioLib.CdAudio
                     {
                         results.Add(new TrAudio());
                         continue;
-                    };
+                    }
+                    ;
 
                     oldPos = writer.BaseStream.Position;
 

@@ -1,17 +1,10 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 namespace CdAudioLib.MsAdpcm
 {
     public class Decoder : AdpcmBase
     {
-        public Decoder() 
+        public Decoder()
         {
             coefficient = new short[][]
             {

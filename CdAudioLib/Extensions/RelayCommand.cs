@@ -4,10 +4,10 @@ namespace CdAudioLib.Extensions
 {
     public class RelayCommand : ICommand
     {
-        private Action<object?> execute; 
-        private Predicate<object?>? canExecute; 
+        private Action<object?> execute;
+        private Predicate<object?>? canExecute;
 
-        public event EventHandler? CanExecuteChanged 
+        public event EventHandler? CanExecuteChanged
         {
             add => CustomCommandManager.RequerySuggested += value;
             remove => CustomCommandManager.RequerySuggested -= value;
@@ -46,8 +46,8 @@ namespace CdAudioLib.Extensions
                 return true;
 
             if (parameter == null)
-                return (default(T) == null) 
-                    ? _canExecute(default!) 
+                return (default(T) == null)
+                    ? _canExecute(default!)
                     : throw new ArgumentNullException(nameof(parameter), "Parameter cannot be null");
             return _canExecute((T)parameter);
         }

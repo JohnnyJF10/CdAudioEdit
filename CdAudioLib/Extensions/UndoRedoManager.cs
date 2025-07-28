@@ -20,7 +20,7 @@ namespace CdAudioLib.Extensions
             SingleAction singleAction = new(undoAction, doAction);
             doAction.Invoke();
             _undoStack.Push(singleAction);
-            _redoStack.Clear(); 
+            _redoStack.Clear();
             OnStateChanged();
         }
 
@@ -31,7 +31,7 @@ namespace CdAudioLib.Extensions
             doAction1.Invoke();
             doAction2.Invoke();
             _undoStack.Push(doubleAction);
-            _redoStack.Clear(); 
+            _redoStack.Clear();
             OnStateChanged();
         }
 

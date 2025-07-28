@@ -1,24 +1,14 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using CdAudioLib.ViewModel;
 using CdAudioWpfUi.Services;
-
 using System.Windows;
-
-using Wpf.Ui.Controls;
 using Wpf.Ui;
-
-using Application = System.Windows.Application;
-using Appearance = Wpf.Ui.Appearance;
 using Wpf.Ui.Appearance;
+using Wpf.Ui.Controls;
+using Appearance = Wpf.Ui.Appearance;
+using Application = System.Windows.Application;
 
 namespace CdAudioWpfUi
 {
@@ -44,6 +34,9 @@ namespace CdAudioWpfUi
                 clipboardService: new ClipboardService()
                 );
             MainWindow = (Window)_viewBuilder.CreateView(mainViewModel);
+
+            MainWindow.Closing += (_, _) => mainViewModel.RemoveTempFileCommand.Execute(null);
+
             ApplicationThemeManager.GetAppTheme();
             Appearance.SystemThemeWatcher.Watch(MainWindow);
 
@@ -61,8 +54,8 @@ namespace CdAudioWpfUi
         protected YesNoCancel SaveChanges()
         {
             var result = System.Windows.Forms.MessageBox.Show
-                ("Do you want to save the current file?", 
-                "Save current file", 
+                ("Do you want to save the current file?",
+                "Save current file",
                 MessageBoxButtons.YesNoCancel);
 
             switch (result)

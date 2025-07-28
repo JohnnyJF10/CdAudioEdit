@@ -1,11 +1,4 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
+﻿
 
 using CdAudioLib.Abstraction;
 using CdAudioLib.Extensions;
@@ -28,7 +21,7 @@ namespace CdAudioLib.ViewModel
         public string ExportPath
         {
             get => _exportPath;
-            set 
+            set
             {
                 if (_exportPath != value)
                 {

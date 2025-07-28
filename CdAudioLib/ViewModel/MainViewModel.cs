@@ -1,18 +1,10 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
+﻿
 
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
-
-using CdAudioLib.Model;
-using CdAudioLib.Extensions;
 using CdAudioLib.Abstraction;
 using CdAudioLib.CdAudio;
+using CdAudioLib.Extensions;
+using CdAudioLib.Model;
 using CdAudioLib.Utils;
-
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -106,7 +98,7 @@ namespace CdAudioLib.ViewModel
             get => _selectedTrAudio;
             set
             {
-                if (!_trAudioHelper.Equals(value,_selectedTrAudio))
+                if (!_trAudioHelper.Equals(value, _selectedTrAudio))
                 {
                     _selectedTrAudio = value;
                     OnPropertyChanged(nameof(SelectedTrAudio));
@@ -376,9 +368,9 @@ namespace CdAudioLib.ViewModel
         public void ExportSelected()
         {
             if (_cdAudioFileService.SaveFileDialog(
-                    types: FileTypes.Wav | FileTypes.Mp3, 
+                    types: FileTypes.Wav | FileTypes.Mp3,
                     InitDir: ExportFolder,
-                    Title: "Export as..."  ) == true 
+                    Title: "Export as...") == true
                     && _cdAudioFileService.SelectedPath is string filePath)
             {
                 try
@@ -412,8 +404,8 @@ namespace CdAudioLib.ViewModel
         public void ImportSelected()
         {
             if (_cdAudioFileService.OpenFileDialog(
-                    types: FileTypes.Wav | FileTypes.Mp3 | FileTypes.Ogg, 
-                    Title: "Select Audio File") == true 
+                    types: FileTypes.Wav | FileTypes.Mp3 | FileTypes.Ogg,
+                    Title: "Select Audio File") == true
                     && _cdAudioFileService.SelectedPath is string filePath)
             {
                 ReplaceSelectedTrAudio(filePath);
@@ -491,7 +483,7 @@ namespace CdAudioLib.ViewModel
 
         private RelayCommand<string[]>? _quickConvertCommand;
         public RelayCommand<string[]> QuickConvertCommand
-            => _quickConvertCommand ??= new RelayCommand<string[]>(async filepaths 
+            => _quickConvertCommand ??= new RelayCommand<string[]>(async filepaths
                 => await QuickCovert(filepaths));
         public async Task QuickCovert(string[] filepaths)
         {
@@ -628,6 +620,12 @@ namespace CdAudioLib.ViewModel
             }
         }
 
+
+        private RelayCommand? _removeTempFileCommand;
+        public RelayCommand RemoveTempFileCommand
+            => _removeTempFileCommand ??= new RelayCommand(DeleteExistingTempFiles);
+
+
         #endregion
 
         #region Private Methods
@@ -638,8 +636,8 @@ namespace CdAudioLib.ViewModel
                 && sender is ObservableTrAudio item
                 && e.PropertyName == nameof(item.Name))
                 ExecuteUndoRedoChange(
-                    _selectedIndex, 
-                    _trAudioHelper.CloneTrAudio(TrAudios[_selectedIndex]), 
+                    _selectedIndex,
+                    _trAudioHelper.CloneTrAudio(TrAudios[_selectedIndex]),
                     _trAudioHelper.CloneTrAudio(_selectedTrAudio));
         }
 

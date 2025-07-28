@@ -1,23 +1,15 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
+﻿
 
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
-
-using System.Windows.Input;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
-
-using Point = System.Windows.Point;
-using ListView = Wpf.Ui.Controls.ListView;
-using MouseEventArgs = System.Windows.Input.MouseEventArgs;
-using DragDropEffects = System.Windows.DragDropEffects;
-using ListViewItem = Wpf.Ui.Controls.ListViewItem;
-using DragEventArgs = System.Windows.DragEventArgs;
 using DataObject = System.Windows.DataObject;
+using DragDropEffects = System.Windows.DragDropEffects;
+using DragEventArgs = System.Windows.DragEventArgs;
+using ListView = Wpf.Ui.Controls.ListView;
+using ListViewItem = Wpf.Ui.Controls.ListViewItem;
+using MouseEventArgs = System.Windows.Input.MouseEventArgs;
+using Point = System.Windows.Point;
 
 namespace CdAudioWpfUi.AttachedProperties
 {

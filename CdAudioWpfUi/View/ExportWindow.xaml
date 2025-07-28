@@ -1,13 +1,4 @@
-﻿<!-- 
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
--->
-    
-<ui:FluentWindow x:Class="CdAudioWpfUi.View.ExportWindow"
+﻿<ui:FluentWindow x:Class="CdAudioWpfUi.View.ExportWindow"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -50,7 +41,11 @@
             Grid.ColumnSpan="2"
             ShowMaximize="False"
             ShowMinimize="False"
-            Title="Export..."/>
+            Title="Export...">
+            <ui:TitleBar.Icon>
+                <ui:ImageIcon Source="pack://application:,,,/Assets/cdaudioedit-icon-1024.png"/>
+            </ui:TitleBar.Icon>
+        </ui:TitleBar>
         <ui:Button Content="Select Folder..."
                    Grid.Row="1"
                    Grid.Column="1"

@@ -1,9 +1,6 @@
 ﻿using CdAudioLib.Abstraction;
 using System.ComponentModel;
 using Wpf.Ui.Controls;
-using Appearance = Wpf.Ui.Appearance;
-using ListView = Wpf.Ui.Controls.ListView;
-using ListViewItem = Wpf.Ui.Controls.ListViewItem;
 
 namespace CdAudioWpfUi.View
 {

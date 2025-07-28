@@ -1,19 +1,10 @@
-﻿/*
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
-*/
-
-using System.Windows;
-using System.Windows.Input;
+﻿
 
 using CdAudioLib.Abstraction;
-
-using DragDropEffects = System.Windows.DragDropEffects;
+using System.Windows;
+using System.Windows.Input;
 using DataFormats = System.Windows.DataFormats;
+using DragDropEffects = System.Windows.DragDropEffects;
 using DragEventArgs = System.Windows.DragEventArgs;
 
 namespace CdAudioWpfUi.AttachedProperties

@@ -4,22 +4,33 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>cdaudioedit-icon-256.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\cdaudioedit-icon-256.ico</ApplicationIcon>
     <UseWPF>true</UseWPF>
-	<UseWindowsForms>true</UseWindowsForms>
+	  <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	<TrimUnusedDependencies>true</TrimUnusedDependencies>
-	<PackageIcon>cdaudioedit-icon-256.png</PackageIcon>
-	<AssemblyName>CdAudioEdit</AssemblyName>
+	  <TrimUnusedDependencies>true</TrimUnusedDependencies>
+	  <PackageIcon>cdaudioedit-icon-256.png</PackageIcon>
+	  <AssemblyName>CdAudioEdit</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.000.0000</FileVersion>
+    <AssemblyTitle>CdAudioEdit</AssemblyTitle>
+    <Description>TR3 music manager and MS ADPCM file converter</Description>
+    <Copyright>Copyright © 2025 Jonas Nebel</Copyright>
+    <Product>CdAudioEdit</Product>
+    <Authors>Jonas Nebel</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="cdaudioedit-icon-256.ico" />
+    <Content Include="Resources\cdaudioedit-icon-256.ico" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Resource Include="Assets\cdaudioedit-icon-1024.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WPF-UI" Version="3.0.5" />
+    <PackageReference Include="WPF-UI" Version="4.0.3" />
   </ItemGroup>
 
   <ItemGroup>

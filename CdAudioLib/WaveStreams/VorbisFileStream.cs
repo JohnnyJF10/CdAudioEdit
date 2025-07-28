@@ -17,8 +17,8 @@ namespace CdAudioLib.WaveStreams
                 vorbisReader.SampleRate,
                 vorbisReader.Channels,
                 vorbisReader.SampleRate * vorbisReader.Channels * 2,
-                vorbisReader.Channels * 2,                          
-                16                                                  
+                vorbisReader.Channels * 2,
+                16
             );
 
             if (externalBuffer == null || externalBuffer.Length < 4096)
@@ -26,7 +26,7 @@ namespace CdAudioLib.WaveStreams
                 throw new ArgumentException("Buffer must be non-null and have a sufficient size.", nameof(externalBuffer));
             }
 
-            sharedBuffer = externalBuffer; 
+            sharedBuffer = externalBuffer;
         }
 
         public override WaveFormat WaveFormat => waveFormat;
@@ -41,7 +41,7 @@ namespace CdAudioLib.WaveStreams
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            int samplesToRead = count / 2; 
+            int samplesToRead = count / 2;
 
             int samplesRead = vorbisReader.ReadSamples(sharedBuffer, 0, Math.Min(sharedBuffer.Length, samplesToRead));
 
@@ -52,9 +52,9 @@ namespace CdAudioLib.WaveStreams
             {
                 float sample = sharedBuffer[i];
                 sample = Math.Max(-1.0f, Math.Min(1.0f, sample));
-                short shortSample = (short)(sample * 32767.0f); 
+                short shortSample = (short)(sample * 32767.0f);
                 BitConverter.GetBytes(shortSample).CopyTo(buffer, offset + bytesWritten);
-                bytesWritten += 2; 
+                bytesWritten += 2;
             }
 
             return bytesWritten;

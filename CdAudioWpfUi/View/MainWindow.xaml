@@ -1,13 +1,4 @@
-﻿<!-- 
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
--->
-    
-<ui:FluentWindow x:Class="CdAudioWpfUi.View.MainWindow"
+﻿<ui:FluentWindow x:Class="CdAudioWpfUi.View.MainWindow"
                  x:Name="wnd_main"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:converter="clr-namespace:CdAudioWpfUi.Converter"
@@ -56,14 +47,16 @@
         <converter:NullToVisibilityConverterRev x:Key="NullToVisibilityConverterRev"/>
         <Style x:Key="style_iconButton" TargetType="ui:Button" 
                BasedOn="{StaticResource {x:Type ui:Button}}">
-            <Setter Property="Width" Value="25"/>
-            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="36"/>
+            <Setter Property="Height" Value="36"/>
             <Setter Property="Padding" Value="-5"/>
             <Setter Property="Margin" Value="3"/>
         </Style>
     </Window.Resources>
     
-    <Grid>
+    <Grid
+        Margin=" 2.5"
+        >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" 
                               MinWidth="200"/>
@@ -77,26 +70,30 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DockPanel 
-            Height="30"
+            Height="36"
             Grid.ColumnSpan="3">
             <ui:TitleBar
-                Icon="{ui:SymbolIcon MusicNote124}"
                 Title="CdAudio Editor"
                 VerticalContentAlignment="Center"
                 ShowMinimize="False"
                 ShowMaximize="False"
                 ShowClose="False"
-                Height="30"/>
+                Height="36">
+                <ui:TitleBar.Icon>
+                    <ui:ImageIcon Source="pack://application:,,,/Assets/cdaudioedit-icon-1024.png"/>
+                </ui:TitleBar.Icon>
+            </ui:TitleBar>
             <ui:TitleBar 
                 ShowMinimize="False"
                 ShowMaximize="False"
                 ShowClose="False"
-                Height="30"
+                Height="36"
                 >
                 <ui:TitleBar.Header>
                     <StackPanel Orientation="Horizontal" >
                         <ui:Button Icon="{ui:SymbolIcon DocumentAdd24}"
                                    BorderThickness="0"
+                                   Margin="0,0,5,0"
                                    Appearance="Transparent"
                                    Style="{StaticResource style_iconButton}"
                                    Command="{Binding NewCommand}">
@@ -113,6 +110,7 @@
                         </ui:Button>
                         <ui:Button Icon="{ui:SymbolIcon FolderOpen24}"
                                    BorderThickness="0"
+                                   Margin="0,0,5,0"
                                    Appearance="Transparent"
                                    Style="{StaticResource style_iconButton}"
                                    Command="{Binding OpenCommand}">
@@ -129,12 +127,13 @@
                             </ui:Button.ToolTip>
                         </ui:Button>
                         <ui:Button
-                                   Icon="{ui:SymbolIcon Save24}"
-                                   Command="{Binding SaveCommand}"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   BorderThickness="0"
-                                   Background="Transparent">
+                            Icon="{ui:SymbolIcon Save24}"
+                            Command="{Binding SaveCommand}"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            BorderThickness="0"
+                            Margin="0,0,5,0"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -146,14 +145,14 @@
                                 </ToolTip>
                             </ui:Button.ToolTip>
                         </ui:Button>
-                        <ui:Button
-                
-                                   Icon="{ui:SymbolIcon SaveArrowRight24}"
-                                   BorderThickness="0"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   Command="{Binding SaveAsCommand}"
-                                   Background="Transparent">
+                        <ui:Button  
+                            Icon="{ui:SymbolIcon SaveArrowRight24}"
+                            BorderThickness="0"
+                            Margin="0,0,5,0"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            Command="{Binding SaveAsCommand}"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -167,13 +166,13 @@
                         </ui:Button>
                         <Separator/>
                         <ui:Button
-                
                             Icon="{ui:SymbolIcon ArrowUndo24}"
-                                   BorderThickness="0"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   Command="{Binding UndoCommand}"
-                                   Background="Transparent">
+                            BorderThickness="0"
+                            Margin="5,0,5,0"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            Command="{Binding UndoCommand}"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -188,11 +187,12 @@
                         <ui:Button
                 
                             Icon="{ui:SymbolIcon ArrowRedo24}"
-                                   BorderThickness="0"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   Command="{Binding RedoCommand}"
-                                   Background="Transparent">
+                            BorderThickness="0"
+                            Margin="0,0,5,0"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            Command="{Binding RedoCommand}"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -208,11 +208,12 @@
                         <ui:Button
                 
                             Icon="{ui:SymbolIcon ArrowExportUp24}"
-                                   BorderThickness="0"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   Command="{Binding ExportCommand}"
-                                   Background="Transparent">
+                            BorderThickness="0"
+                            Margin="5,0,5,0"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            Command="{Binding ExportCommand}"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -225,13 +226,13 @@
                             </ui:Button.ToolTip>
                         </ui:Button>
                         <ui:Button
-                            
                             Icon="{ui:SymbolIcon Settings24}"
-                                   BorderThickness="0"
-                                   Appearance="Transparent"
-                                   Style="{StaticResource style_iconButton}"
-                                   Command="{Binding SettingsCommand}"
-                                   Background="Transparent">
+                            BorderThickness="0"
+                            Margin="0"
+                            Appearance="Transparent"
+                            Style="{StaticResource style_iconButton}"
+                            Command="{Binding SettingsCommand}"
+                            Background="Transparent">
                             <ui:Button.ToolTip>
                                 <ToolTip>
                                     <StackPanel>
@@ -246,7 +247,7 @@
                     </StackPanel>
                 </ui:TitleBar.Header>
             </ui:TitleBar>
-            <ui:TitleBar Height="30"/>
+            <ui:TitleBar Height="36"/>
         </DockPanel>
 
         <ui:DynamicScrollViewer x:Name="scr_scroller"
@@ -264,6 +265,7 @@
                          attachedProperties:DropHelper.InternalDropCommand="{Binding IntrinsicDropCommand}"
                          AlternationCount="130"
                          SelectionMode="Single"
+                         Margin="0,5,0,0"
                          >
                 <ui:ListView.ContextMenu>
                     <ContextMenu 
@@ -317,6 +319,7 @@
                                        HorizontalAlignment="Center" 
                                        VerticalAlignment="Center"
                                        Appearance="Transparent"
+                                       Height="15"
                                        Style="{StaticResource style_iconButton}"
                                        Visibility="{Binding Name, 
                                                             Converter={StaticResource NullToVisibilityConverter}}"
@@ -369,7 +372,7 @@
             <ui:Card VerticalAlignment="Stretch"
                      VerticalContentAlignment="Stretch"
                      Padding="0,0,5,0"
-                     Margin="0,0,-5,0"
+                     Margin="0,5,-5,0"
                      >
                 <Grid>
                     <Grid VerticalAlignment="Stretch"
@@ -391,8 +394,7 @@
                         </Grid.RowDefinitions>
 
                         <ui:SymbolIcon 
-                        Grid.ColumnSpan="4"
-                        Margin="10"
+                        Margin="20"
                         Symbol="MusicNote224"
                         FontSize="42"
                         Filled="True"

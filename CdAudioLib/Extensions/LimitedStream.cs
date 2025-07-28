@@ -15,7 +15,7 @@
 
         public override bool CanRead => _baseStream.CanRead;
         public override bool CanSeek => _baseStream.CanSeek;
-        public override bool CanWrite => false; 
+        public override bool CanWrite => false;
         public override long Length => _length;
 
         public override long Position

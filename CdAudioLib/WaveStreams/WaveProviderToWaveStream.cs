@@ -16,7 +16,7 @@ namespace CdAudioLib.WaveStreams
 
         public override WaveFormat WaveFormat => waveFormat;
 
-        public override long Length => 0; 
+        public override long Length => 0;
 
         public override long Position
         {

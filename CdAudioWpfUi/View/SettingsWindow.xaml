@@ -1,13 +1,4 @@
-﻿<!-- 
-   Copyright 2025 Jonas Nebel
-
-   Author:  Jonas Nebel
-   Created: 02.01.2025
-
-   License: MIT
--->
-
-<ui:FluentWindow                    
+﻿<ui:FluentWindow                    
     x:Class="CdAudioWpfUi.View.SettingsWindow"
     x:Name="wnd_settings"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
@@ -48,7 +39,11 @@
             Grid.ColumnSpan="3" 
             VerticalAlignment="Center"
             ShowMinimize="False"
-            ShowMaximize="False"/>
+            ShowMaximize="False">
+            <ui:TitleBar.Icon>
+                <ui:ImageIcon Source="pack://application:,,,/Assets/cdaudioedit-icon-1024.png"/>
+            </ui:TitleBar.Icon>
+        </ui:TitleBar>
 
         <Grid Grid.Row="1"
               Margin="5">
