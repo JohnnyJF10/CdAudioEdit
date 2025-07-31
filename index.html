@@ -25,7 +25,8 @@
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/CdAudioEdit/assets/css/style.css?v=3a29101bd514970af2f6b599301a8d8569f8028c">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+    <link rel="stylesheet" href="/CdAudioEdit/assets/css/custom.css">
+	<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
 
@@ -34,10 +35,34 @@
 <!-- You can set your favicon here -->
 <!-- link rel="shortcut icon" type="image/x-icon" href="/CdAudioEdit/favicon.ico" -->
 
+    
 <!-- end custom head snippets -->
 
   </head>
   <body>
+    <!-- Sidebar for desktop -->
+  <nav id="sidebar" class="sidebar">
+    <h2>Inhalt</h2>
+    <ul>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#download">Download</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hamburger menu for mobile -->
+  <div class="mobile-header">
+    <button id="menu-toggle">&#9776;</button>
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="#description">Description</a>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#download">Download</a>
+    </div>
+  </div>
+
+  <!-- Main content -->
     <div class="container-lg px-3 my-5 markdown-body">
       
 
