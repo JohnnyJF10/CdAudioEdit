@@ -42,4 +42,47 @@
 }
 
 #menu-toggle {
-  font-size:
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  flex-direction: column;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.mobile-menu a {
+  padding: 8px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+
+/* Indent class for h3 entries */
+.mobile-menu a.indent {
+  padding-left: 20px;
+}
+
+/* Visibility toggle via JS */
+.hidden {
+  display: none !important;
+}
+
+/* Responsive behavior */
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+
+  #main-content {
+    margin-left: 240px;
+  }
+
+  .mobile-header,
+  .mobile-menu {
+    display: none !important;
+  }
+}
