@@ -42,7 +42,7 @@
   <body>
     <!-- Sidebar for desktop -->
   <nav id="sidebar" class="sidebar">
-    <h2>Inhalt</h2>
+    <h2>Content</h2>
     <ul>
       <li><a href="#description">Description</a></li>
       <li><a href="#features">Features</a></li>
@@ -156,5 +156,11 @@ If you want to contribute code, feel free to fork the repository and create a pu
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
+	<script>
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
