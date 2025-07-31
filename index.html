@@ -41,29 +41,21 @@
   </head>
   <body>
     <!-- Sidebar for desktop -->
-  <nav id="sidebar" class="sidebar">
-    <h2>Content</h2>
-    <ul>
-      <li><a href="#description">Description</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#download">Download</a></li>
-    </ul>
-  </nav>
+    <nav id="sidebar" class="sidebar">
+      <h2>Content</h2>
+      <ul id="toc"></ul> 
+    </nav>
 
   <!-- Hamburger menu for mobile -->
   <div class="mobile-header">
     <button id="menu-toggle">&#9776;</button>
     <div id="mobile-menu" class="mobile-menu hidden">
-      <a href="#description">Description</a>
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#download">Download</a>
+      
     </div>
   </div>
 
   <!-- Main content -->
-    <div class="container-lg px-3 my-5 markdown-body">
+    <div id="main-content" class="container-lg px-3 my-5 markdown-body">
       
 
       <h1 id="cdaudioedit">CdAudioEdit</h1>
@@ -156,10 +148,42 @@ If you want to contribute code, feel free to fork the repository and create a pu
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
-	<script>
-      document.getElementById("menu-toggle").addEventListener("click", function() {
-        const menu = document.getElementById("mobile-menu");
-        menu.classList.toggle("hidden");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const content = document.getElementById("main-content");
+        const headings = content.querySelectorAll("h2, h3");
+        const toc = document.getElementById("toc");
+        const mobileMenu = document.getElementById("mobile-menu");
+    
+        headings.forEach((heading, index) => {
+          
+          if (!heading.id) {
+            heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^\w\-]/g, "") + "-" + index;
+          }
+    
+          // ===== Desktop Sidebar =====
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = "#" + heading.id;
+          a.textContent = heading.textContent;
+          if (heading.tagName === "H3") {
+            li.style.marginLeft = "10px";
+          }
+          li.appendChild(a);
+          toc.appendChild(li);
+    
+          // ===== Mobile Menu =====
+          const mobileLink = document.createElement("a");
+          mobileLink.href = "#" + heading.id;
+          mobileLink.textContent = heading.textContent;
+          mobileLink.style.paddingLeft = heading.tagName === "H3" ? "15px" : "0px";
+          mobileMenu.appendChild(mobileLink);
+        });
+    
+        // Toggle
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
       });
     </script>
   </body>
