@@ -1,190 +1,263 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="P2WkutHNyjf_pJ2zK8n0XdmGVwwaJBPMVEqMFEaD4Uw" />
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>CdAudioEdit | TR3 music manager and MS ADPCM file converter</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="CdAudioEdit" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="TR3 music manager and MS ADPCM file converter" />
-<meta property="og:description" content="TR3 music manager and MS ADPCM file converter" />
-<link rel="canonical" href="https://johnnyjf10.github.io/CdAudioEdit/" />
-<meta property="og:url" content="https://johnnyjf10.github.io/CdAudioEdit/" />
-<meta property="og:site_name" content="CdAudioEdit" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="CdAudioEdit" />
-<script type="application/ld+json">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="P2WkutHNyjf_pJ2zK8n0XdmGVwwaJBPMVEqMFEaD4Uw" />
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>CdAudioEdit | TR3 music manager and MS ADPCM file converter</title>
+  <meta name="generator" content="Jekyll v3.10.0" />
+  <meta property="og:title" content="CdAudioEdit" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="TR3 music manager and MS ADPCM file converter" />
+  <meta property="og:description" content="TR3 music manager and MS ADPCM file converter" />
+  <link rel="canonical" href="https://johnnyjf10.github.io/CdAudioEdit/" />
+  <meta property="og:url" content="https://johnnyjf10.github.io/CdAudioEdit/" />
+  <meta property="og:site_name" content="CdAudioEdit" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="CdAudioEdit" />
+  <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","description":"TR3 music manager and MS ADPCM file converter","headline":"CdAudioEdit","name":"CdAudioEdit","url":"https://johnnyjf10.github.io/CdAudioEdit/"}</script>
-<!-- End Jekyll SEO tag -->
+  <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/CdAudioEdit/assets/css/style.css?v=3a29101bd514970af2f6b599301a8d8569f8028c">
-    <link rel="stylesheet" href="/CdAudioEdit/assets/css/custom.css">
-	<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+  <link rel="stylesheet" href="/CdAudioEdit/assets/css/style.css?v=3a29101bd514970af2f6b599301a8d8569f8028c">
+  <link rel="stylesheet" href="/CdAudioEdit/assets/css/custom.css">
+  <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
-<!-- Setup Google Analytics -->
+  <!-- Setup Google Analytics -->
 
 
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/CdAudioEdit/favicon.ico" -->
+  <!-- You can set your favicon here -->
+  <!-- link rel="shortcut icon" type="image/x-icon" href="/CdAudioEdit/favicon.ico" -->
 
-    
-<!-- end custom head snippets -->
 
-  </head>
-  <body>
-    <!-- Sidebar for desktop -->
-    <nav id="sidebar" class="sidebar">
-      <h2>Content</h2>
-      <ul id="toc"></ul> 
-    </nav>
+  <!-- end custom head snippets -->
+
+</head>
+
+<body>
+  <!-- Sidebar for desktop -->
+  <nav id="sidebar" class="sidebar">
+    <h2>Content</h2>
+    <ul id="toc"></ul>
+  </nav>
 
   <!-- Hamburger menu for mobile -->
   <div class="mobile-header">
     <button id="menu-toggle">&#9776;</button>
     <div id="mobile-menu" class="mobile-menu hidden">
-      
+
     </div>
   </div>
 
   <!-- Main content -->
-    <div id="main-content" class="container-lg px-3 my-5 markdown-body">
-      
+  <div id="main-content" class="container-lg px-3 my-5 markdown-body">
 
-      <h1 id="cdaudioedit">CdAudioEdit</h1>
 
-<h2 id="description">Description</h2>
-<p>This app lets you open, edit, and save the CdAudio.wad for TR3’s music. Extract .wav files from the Cdaudio.wad or compress wav, MP3, or OGG Vorbis files into the MS ADPCM Wave format used by TR3 and store them in the Cdaudio.wad. It also includes a converter to turn Wave, MP3, and OGG files into the correct MS ADPCM Wave File format for use in TR4 or TRC.
-This is an early build, so there may be bugs. Although the size of the CdAudio.wad file can be very large, please make back-ups to prevent data loss.</p>
+    <h1 id="cdaudioedit">CdAudioEdit</h1>
 
-<h2 id="installation">Installation</h2>
-<p>Download the latest release from <a href="https://github.com/JohnnyJF10/CdAudioEdit/releases">GitHub Releases</a> and extract the files.</p>
+    <h2 id="description">Description</h2>
+    <p>This app lets you open, edit, and save the CdAudio.wad for TR3’s music. Extract .wav files from the Cdaudio.wad
+      or compress wav, MP3, or OGG Vorbis files into the MS ADPCM Wave format used by TR3 and store them in the
+      Cdaudio.wad. It also includes a converter to turn Wave, MP3, and OGG files into the correct MS ADPCM Wave File
+      format for use in TR4 or TRC.
+      This is an early build, so there may be bugs. Although the size of the CdAudio.wad file can be very large, please
+      make back-ups to prevent data loss.</p>
 
-<h3 id="requirements">Requirements</h3>
-<ul>
-  <li>Windows 10/11</li>
-  <li>.NET 6+</li>
-</ul>
+    <h2 id="installation">Installation</h2>
+    <p>Download the latest release from <a href="https://github.com/JohnnyJF10/CdAudioEdit/releases">GitHub Releases</a>
+      and extract the files.</p>
 
-<h2 id="usage">Usage</h2>
-<ol>
-  <li>Open the app and load a CdAudio.wad file.
-<img src="/CdAudioEdit/images/readmeStep1.png" alt="Step1" /></li>
-  <li>Use Drag and Drop or the Import Button to import new audio files (.wav, .mp3, .ogg (Vorbis)). You can reorder, shift, or rename the tracks as needed.
-<img src="/CdAudioEdit/images/readmeStep2.png" alt="Step2" /></li>
-  <li>During file save, the injected audio files are converted and compressed to MS ADPCM, and the modified CdAudio.wad file is built.
-<img src="/CdAudioEdit/images/readmeStep3.png" alt="Step3" /></li>
-</ol>
+    <h3 id="requirements">Requirements</h3>
+    <ul>
+      <li>Windows 10/11</li>
+      <li>.NET 6+</li>
+    </ul>
 
-<p>Additional:</p>
-<ul>
-  <li>Use the Quick Converter to create MS ADPCM Wave Files</li>
-  <li>Use the Export tool to extract selected or all files in the CdAudio.wad to wav or MP3.</li>
-</ul>
+    <h2 id="usage">Usage</h2>
+    <ol>
+      <li>Open the app and load a CdAudio.wad file.
+        <img src="/CdAudioEdit/images/readmeStep1.png" alt="Step1" />
+      </li>
+      <li>Use Drag and Drop or the Import Button to import new audio files (.wav, .mp3, .ogg (Vorbis)). You can reorder,
+        shift, or rename the tracks as needed.
+        <img src="/CdAudioEdit/images/readmeStep2.png" alt="Step2" />
+      </li>
+      <li>During file save, the injected audio files are converted and compressed to MS ADPCM, and the modified
+        CdAudio.wad file is built.
+        <img src="/CdAudioEdit/images/readmeStep3.png" alt="Step3" />
+      </li>
+    </ol>
 
-<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
-<table>
-    <thead>
+    <p>Additional:</p>
+    <ul>
+      <li>Use the Quick Converter to create MS ADPCM Wave Files</li>
+      <li>Use the Export tool to extract selected or all files in the CdAudio.wad to wav or MP3.</li>
+    </ul>
+
+    <h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+    <table>
+      <thead>
         <tr>
-            <th>Shortcut</th>
-            <th>Action</th>
+          <th>Shortcut</th>
+          <th>Action</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr><td><strong>Ctrl + N</strong></td><td>New file</td></tr>
-        <tr><td><strong>Ctrl + O</strong></td><td>Open file</td></tr>
-        <tr><td><strong>Ctrl + S</strong></td><td>Save file</td></tr>
-        <tr><td><strong>Ctrl + Shift + S</strong></td><td>Save As</td></tr>
-        <tr><td><strong>Ctrl + X</strong></td><td>Cut</td></tr>
-        <tr><td><strong>Ctrl + C</strong></td><td>Copy</td></tr>
-        <tr><td><strong>Ctrl + V</strong></td><td>Paste</td></tr>
-        <tr><td><strong>Ctrl + D</strong></td><td>Paste &amp; Swap</td></tr>
-        <tr><td><strong>Ctrl + Z</strong></td><td>Undo</td></tr>
-        <tr><td><strong>Ctrl + Y</strong></td><td>Redo</td></tr>
-        <tr><td><strong>Delete</strong></td><td>Delete</td></tr>
-        <tr><td><strong>Ctrl + E</strong></td><td>Export</td></tr>
-        <tr><td><strong>Ctrl + F</strong></td><td>Open Settings</td></tr>
-    </tbody>
-</table>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ctrl + N</strong></td>
+          <td>New file</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + O</strong></td>
+          <td>Open file</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + S</strong></td>
+          <td>Save file</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + Shift + S</strong></td>
+          <td>Save As</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + X</strong></td>
+          <td>Cut</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + C</strong></td>
+          <td>Copy</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + V</strong></td>
+          <td>Paste</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + D</strong></td>
+          <td>Paste &amp; Swap</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + Z</strong></td>
+          <td>Undo</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + Y</strong></td>
+          <td>Redo</td>
+        </tr>
+        <tr>
+          <td><strong>Delete</strong></td>
+          <td>Delete</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + E</strong></td>
+          <td>Export</td>
+        </tr>
+        <tr>
+          <td><strong>Ctrl + F</strong></td>
+          <td>Open Settings</td>
+        </tr>
+      </tbody>
+    </table>
 
-<h2 id="license">License</h2>
-<p>This project is licensed under the MIT License.</p>
+    <h2 id="license">License</h2>
+    <p>This project is licensed under the MIT License.</p>
 
-<h3 id="third-party-libraries">Third-Party Libraries</h3>
-<ul>
-  <li><a href="https://github.com/naudio/NAudio">NAudio</a> (MIT License)</li>
-  <li><a href="https://github.com/NVorbis/NVorbis">NVorbis</a> (MIT License)</li>
-  <li><a href="https://github.com/Corey-M/NAudio.Lame">NAudio.Lame</a> (MIT License)</li>
-  <li><a href="https://github.com/lepoco/wpfui">wpfui</a> (MIT License)</li>
-</ul>
+    <h3 id="third-party-libraries">Third-Party Libraries</h3>
+    <ul>
+      <li><a href="https://github.com/naudio/NAudio">NAudio</a> (MIT License)</li>
+      <li><a href="https://github.com/NVorbis/NVorbis">NVorbis</a> (MIT License)</li>
+      <li><a href="https://github.com/Corey-M/NAudio.Lame">NAudio.Lame</a> (MIT License)</li>
+      <li><a href="https://github.com/lepoco/wpfui">wpfui</a> (MIT License)</li>
+    </ul>
 
-<h2 id="contributing">Contributing</h2>
-<p>Contributions are welcome! If you find a bug or have a feature request, please open an <a href="https://github.com/JohnnyJF10/CdAudioEdit/issues">issue</a>.<br />
-If you want to contribute code, feel free to fork the repository and create a pull request.</p>
+    <h2 id="contributing">Contributing</h2>
+    <p>Contributions are welcome! If you find a bug or have a feature request, please open an <a
+        href="https://github.com/JohnnyJF10/CdAudioEdit/issues">issue</a>.<br />
+      If you want to contribute code, feel free to fork the repository and create a pull request.</p>
 
-<h2 id="support">Support</h2>
-<p>If you have any issues, please open a <a href="https://github.com/JohnnyJF10/CdAudioEdit/issues">GitHub Issue</a>.</p>
+    <h2 id="support">Support</h2>
+    <p>If you have any issues, please open a <a href="https://github.com/JohnnyJF10/CdAudioEdit/issues">GitHub
+        Issue</a>.</p>
 
-<h2 id="to-do-list">To Do List:</h2>
-<ul>
-  <li>Implement OGG Vorbis export (I could not find an appropriate .net encoder yet)</li>
-  <li>Fix bugs</li>
-  <li>Migrate from WPF to Win UI 3</li>
-</ul>
+    <h2 id="to-do-list">To Do List:</h2>
+    <ul>
+      <li>Implement OGG Vorbis export (I could not find an appropriate .net encoder yet)</li>
+      <li>Fix bugs</li>
+      <li>Migrate from WPF to Win UI 3</li>
+    </ul>
 
 
-      
-      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        This site is open source. <a href="https://github.com/JohnnyJF10/CdAudioEdit/edit/master/README.md">Improve this page</a>.
-      </div>
-      
+
+    <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+      This site is open source. <a href="https://github.com/JohnnyJF10/CdAudioEdit/edit/master/README.md">Improve this
+        page</a>.
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const content = document.getElementById("main-content");
-        const headings = content.querySelectorAll("h2, h3");
-        const toc = document.getElementById("toc");
-        const mobileMenu = document.getElementById("mobile-menu");
-    
-        headings.forEach((heading, index) => {
-          
-          if (!heading.id) {
-            heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^\w\-]/g, "") + "-" + index;
-          }
-    
-          // ===== Desktop Sidebar =====
-          const li = document.createElement("li");
-          const a = document.createElement("a");
-          a.href = "#" + heading.id;
-          a.textContent = heading.textContent;
-          if (heading.tagName === "H3") {
-            li.style.marginLeft = "10px";
-          }
-          li.appendChild(a);
-          toc.appendChild(li);
-    
-          // ===== Mobile Menu =====
-          const mobileLink = document.createElement("a");
-          mobileLink.href = "#" + heading.id;
-          mobileLink.textContent = heading.textContent;
-          mobileLink.style.paddingLeft = heading.tagName === "H3" ? "15px" : "0px";
-          mobileMenu.appendChild(mobileLink);
-        });
-    
-        // Toggle
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-          mobileMenu.classList.toggle("hidden");
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+    integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+  <script>anchors.add();</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const content = document.getElementById("main-content");
+      const headings = content.querySelectorAll("h2, h3");
+      const toc = document.getElementById("toc");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuToggle = document.getElementById("menu-toggle");
+
+      // TOC-Links generieren
+      headings.forEach((heading, index) => {
+        if (!heading.id) {
+          heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^\w\-]/g, "") + "-" + index;
+        }
+
+        // ===== Desktop Sidebar =====
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + heading.id;
+        a.textContent = heading.textContent;
+        if (heading.tagName === "H3") {
+          li.style.marginLeft = "10px";
+        }
+        li.appendChild(a);
+        toc.appendChild(li);
+
+        // ===== Mobile Menu =====
+        const mobileLink = document.createElement("a");
+        mobileLink.href = "#" + heading.id;
+        mobileLink.textContent = heading.textContent;
+        mobileLink.style.paddingLeft = heading.tagName === "H3" ? "15px" : "0px";
+        mobileMenu.appendChild(mobileLink);
+      });
+
+      // Toggle mobile menu
+      menuToggle.addEventListener("click", function (event) {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Menü schließen beim Klick auf Link im mobilen Menü
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
         });
       });
-    </script>
-  </body>
+
+      // Menü schließen beim Klick außerhalb
+      document.addEventListener('click', function (event) {
+        const isClickInsideMenu = mobileMenu.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+
+        if (!mobileMenu.classList.contains('hidden') && !isClickInsideMenu && !isClickOnToggle) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>
