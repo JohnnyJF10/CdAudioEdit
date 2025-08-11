@@ -18,8 +18,8 @@
     WindowStartupLocation="CenterScreen"
     d:Background="Black"
     Title="SettingsWindow" 
-    Width="720"
-    MinWidth="720"
+    Width="750"
+    MinWidth="750"
     MinHeight="200"
     ResizeMode="NoResize"
     SizeToContent="Height"
@@ -135,22 +135,37 @@
                 Margin="5"
                 Orientation="Horizontal">
                 <TextBlock Text="CdAudioEdit"
+                           VerticalAlignment="Center"
                            Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                            FontSize="10"
                            Margin="5"/>
                 <TextBlock Text="Copyright 2025 Jonas Nebel"
+                           VerticalAlignment="Center"
                            Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                            FontSize="10"
                            Margin="5"/>
                 <TextBlock Text="License: MIT"
+                           VerticalAlignment="Center"
                            Foreground="{ui:ThemeResource TextFillColorTertiaryBrush}"
                            FontSize="10"
                            Margin="5"/>
-                <TextBlock FontSize="10" Margin="5">
+                <TextBlock FontSize="10" 
+                           Margin="5"
+                           VerticalAlignment="Center"
+                           >
                     <Hyperlink NavigateUri="https://github.com/JohnnyJF10/CdAudioEdit/blob/master/" RequestNavigate="Hyperlink_RequestNavigate">
                         GitHub
                     </Hyperlink>
                 </TextBlock>
+
+                <ui:Button
+                    Margin="10,0"
+                    Width="36"
+                    Height="36"
+                    Icon="{ui:SymbolIcon WeatherSunny16}"
+                    Click="ChangeThemeButton_Clicked"
+                    
+                    />
 
             </StackPanel>
 

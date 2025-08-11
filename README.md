@@ -1,4 +1,11 @@
 # CdAudioEdit
+### **Texture Panel Building Tool for TRLE**
+
+[Latest Releases](https://github.com/JohnnyJF10/CdAudioEdit/releases) | [Github Page](https://johnnyjf10.github.io/CdAudioEdit/)
+
+![LatestReleaseBuildStatus](https://github.com/JohnnyJF10/CdAudioEdit/actions/workflows/dotnet-release.yml/badge.svg)
+
+![Logo](images/cdaudioedit-icon-256.png)
 
 ## Description
 This app lets you open, edit, and save the CdAudio.wad for TR3's music. Extract .wav files from the Cdaudio.wad or compress wav, MP3, or OGG Vorbis files into the MS ADPCM Wave format used by TR3 and store them in the Cdaudio.wad. It also includes a converter to turn Wave, MP3, and OGG files into the correct MS ADPCM Wave File format for use in TR4 or TRC.
@@ -9,7 +16,7 @@ Download the latest release from [GitHub Releases](https://github.com/JohnnyJF10
 
 ### Requirements
 - Windows 10/11
-- .NET 6+
+- .NET 6
 
 ## Usage
 1. Open the app and load a CdAudio.wad file.

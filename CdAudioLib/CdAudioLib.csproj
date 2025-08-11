@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.000.0000</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <AssemblyTitle>CdAudioLib</AssemblyTitle>
     <Description>Backend Library for CdAudioEdit</Description>
     <Copyright>Copyright © 2025 Jonas Nebel</Copyright>

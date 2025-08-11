@@ -12,8 +12,8 @@
 	  <TrimUnusedDependencies>true</TrimUnusedDependencies>
 	  <PackageIcon>cdaudioedit-icon-256.png</PackageIcon>
 	  <AssemblyName>CdAudioEdit</AssemblyName>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.000.0000</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <AssemblyTitle>CdAudioEdit</AssemblyTitle>
     <Description>TR3 music manager and MS ADPCM file converter</Description>
     <Copyright>Copyright © 2025 Jonas Nebel</Copyright>
